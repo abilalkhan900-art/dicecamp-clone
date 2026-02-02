@@ -2,11 +2,11 @@
 
 This project is a simple static website inspired by dicecamp.com, built to demonstrate a **full local DevOps workflow** using Docker, Docker Compose, Kubernetes (Minikube), GitHub, and CI/CD foundations.
 
-The goal is to understand how an application moves from **local files → container → Kubernetes → version control → cloud deployment**.
+The goal is to understand how an application moves from **local files â†’ container â†’ Kubernetes â†’ version control â†’ cloud deployment**.
 
 ---
 
-##�� Project Overview
+##·± Project Overview
 
 **What this project includes:**
 - Static HTML/CSS website
@@ -38,7 +38,7 @@ dicecamp-clone/
 
 ---
 
-## ��� Website
+## Website
 
 - Pure HTML and CSS
 - Served using NGINX
@@ -46,7 +46,7 @@ dicecamp-clone/
 
 ---
 
-## ��� Docker
+## Docker
 
 ### Dockerfile
 - Uses `nginx:alpine` as a base image
@@ -57,35 +57,35 @@ dicecamp-clone/
 ```bash
 docker build -t dicecamp:1.0 .
 
-Run container locally
+### Run container locally
 docker run -p 8080:80 dicecamp:1.0
 
-Access at:
+### Access at:
 http://localhost:8080
 
-Run with Docker Compose
+### Run with Docker Compose
 docker compose up --build
 
-Access at:
+### Access at:
 http://localhost:8080
 
-Start Minikube
+### Start Minikube
 minikube start --driver=docker
 
-Kubernetes manifests
-deployment.yaml – defines the app deployment
-service.yaml – exposes the app via NodePort
+### Kubernetes manifests
+### deployment.yaml - defines the app deployment
+### service.yaml - exposes the app via NodePort
 
-Deploy to Minikube
+### Deploy to Minikube
 kubectl apply -f k8s/
 
-Load Docker image into Minikube (Windows / Git Bash)
+### Load Docker image into Minikube (Windows / Git Bash)
 minikube image load dicecamp:1.0
 
-Access the service
+### Access the service
 minikube service dicecamp-service
 
-CI/CD (GitHub Actions)
+### CI/CD (GitHub Actions)
 Current Pipeline
 Triggered on every push to main
 Checks out repository
